@@ -1,0 +1,638 @@
+/* ============================================================
+   Showcase 3D Ring Carousel & Panel Styles
+   Industrial-premium Dark theme
+   ============================================================ */
+
+.showcase {
+  position: relative;
+  width: 100%;
+  padding: 100px 0 120px;
+  background: var(--color-bg);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  overflow: hidden;
+  user-select: none;
+}
+
+.showcaseInner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-pad);
+}
+
+.showcaseHeader {
+  margin-bottom: 3rem;
+}
+
+.showcaseTitle {
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 5vw, 4rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--color-text);
+  margin-top: 0.5rem;
+}
+
+.showcaseSub {
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  max-width: 600px;
+  margin-top: 0.75rem;
+}
+
+/* --- STAGE & PANEL DUAL LAYOUT --- */
+.layout {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 3.5rem;
+  position: relative;
+}
+
+/* --- CAROUSEL STAGE --- */
+.stage {
+  flex: 1;
+  height: 580px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  touch-action: pan-y;
+  cursor: grab;
+}
+
+.stage:active {
+  cursor: grabbing;
+}
+
+.ring {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  pointer-events: none;
+  perspective: 1200px;
+}
+
+/* Single Ring Body */
+.ringBody {
+  width: 280px;
+  height: 480px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  cursor: pointer;
+  pointer-events: auto;
+  will-change: transform, opacity, filter;
+  transform-origin: bottom center;
+}
+
+.figureWrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.figureImg {
+  width: 100%;
+  height: 100%;
+  max-height: 460px;
+  object-fit: contain;
+  object-position: bottom center;
+  pointer-events: none;
+  filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.7));
+  transition: transform 0.25s ease;
+}
+
+.ringBody:hover .figureImg {
+  transform: translateY(-4px);
+}
+
+.figureShadow {
+  position: absolute;
+  bottom: 0;
+  left: 15%;
+  right: 15%;
+  height: 20px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 70%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Light sweep beam on active change */
+.lightSweep {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 120px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 106, 26, 0) 0%,
+    rgba(255, 106, 26, 0.25) 50%,
+    rgba(255, 106, 26, 0) 100%
+  );
+  pointer-events: none;
+  z-index: 50;
+  transform: skewX(-12deg);
+}
+
+/* --- STAGE CONTROLS (Nav + Ticks) --- */
+.stageControls {
+  position: relative;
+  z-index: 60;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.navBtns {
+  display: flex;
+  gap: 8px;
+}
+
+.navBtn {
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.navBtn:hover {
+  background: var(--color-surface-2);
+  border-color: var(--color-orange);
+  color: var(--color-orange);
+}
+
+/* --- TICKS PROGRESS BAR --- */
+.ticks {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.tick {
+  height: 4px;
+  flex: 0 0 44px;
+  background: rgba(242, 240, 236, 0.15);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  transition: flex-basis 0.4s var(--ease-spring), background 0.2s ease;
+}
+
+.tickActive {
+  flex-basis: 140px;
+  background: rgba(242, 240, 236, 0.25);
+}
+
+.tickFill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: var(--color-orange);
+}
+
+/* --- SIDE PANEL ("In this project") --- */
+.panel {
+  width: 380px;
+  flex-shrink: 0;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  padding: 2.25rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 70;
+}
+
+.panelInner {
+  display: flex;
+  flex-direction: column;
+}
+
+.panelHead {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-orange);
+  margin-bottom: 0.5rem;
+}
+
+.panelTitle {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.panelSpecs {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  padding: 1.5rem 0;
+}
+
+.specRow {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.specLabel {
+  font-size: 0.75rem;
+  color: var(--color-text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.specValue {
+  font-size: 0.95rem;
+  color: var(--color-text);
+  font-weight: 500;
+}
+
+/* Pickers */
+.pickerWrap {
+  position: relative;
+  width: 100%;
+}
+
+.pickerBtn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  text-align: left;
+  transition: border-color 0.2s ease;
+}
+
+.pickerBtn:hover {
+  border-color: var(--color-orange);
+}
+
+.pickerChevron {
+  font-size: 0.7rem;
+  color: var(--color-orange);
+}
+
+.pickerDropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-orange);
+  z-index: 100;
+  max-height: 180px;
+  overflow-y: auto;
+  box-shadow: var(--shadow-lg);
+}
+
+.pickerOption {
+  width: 100%;
+  padding: 8px 12px;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: block;
+  transition: all 0.15s ease;
+}
+
+.pickerOption:hover {
+  background: rgba(255, 106, 26, 0.15);
+  color: var(--color-text);
+}
+
+.pickerOptionActive {
+  color: var(--color-orange);
+  font-weight: 600;
+}
+
+.priceNote {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin-bottom: 1.25rem;
+}
+
+/* CTA with shine & glow */
+.ctaBtn {
+  position: relative;
+  width: 100%;
+  padding: 14px 20px;
+  background: var(--color-orange);
+  color: #000;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ctaBtn:hover:not(:disabled) {
+  background: #ff7d38;
+  box-shadow: 0 0 24px var(--color-orange-glow);
+}
+
+.ctaBtn:disabled {
+  opacity: 0.85;
+  cursor: default;
+}
+
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  border-top-color: #000;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+.bundleFooter {
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.bundleNote {
+  font-size: 0.8rem;
+  color: var(--color-text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.waLink {
+  font-size: 0.85rem;
+  color: var(--color-orange);
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.2s ease;
+}
+
+.waLink:hover {
+  color: #ff9154;
+  text-decoration: underline;
+}
+
+/* --- POPUP MODAL (View Project) --- */
+.popupBackdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 17, 19, 0.88);
+  backdrop-filter: blur(8px);
+  z-index: var(--z-popup);
+}
+
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90vw;
+  max-width: 900px;
+  max-height: 88vh;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-strong);
+  z-index: calc(var(--z-popup) + 1);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.9);
+  overflow: hidden;
+}
+
+.popupTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.popupNum {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--color-orange);
+  margin-right: 1rem;
+}
+
+.popupTitle {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-text);
+  flex: 1;
+}
+
+.popupClose {
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface-2);
+  color: var(--color-text);
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.popupClose:hover {
+  border-color: var(--color-orange);
+  color: var(--color-orange);
+}
+
+.popupBody {
+  flex: 1;
+  overflow-y: auto;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popupImgWrap {
+  position: relative;
+  max-width: 480px;
+  width: 100%;
+}
+
+.popupImg {
+  width: 100%;
+  max-height: 520px;
+  object-fit: contain;
+  filter: drop-shadow(0 16px 32px rgba(0, 0, 0, 0.8));
+}
+
+/* Pins */
+.pin {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.pinDot {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--color-orange);
+  color: #000;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 16px var(--color-orange-glow);
+  transition: transform 0.2s ease;
+}
+
+.pin:hover .pinDot {
+  transform: scale(1.15);
+}
+
+.pinLabel {
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  font-size: 0.75rem;
+  padding: 4px 10px;
+  white-space: nowrap;
+  pointer-events: none;
+  box-shadow: var(--shadow-md);
+}
+
+.popupHint {
+  font-size: 0.75rem;
+  color: var(--color-text-dim);
+  text-align: center;
+  padding: 0.75rem;
+  border-top: 1px solid var(--color-border);
+}
+
+/* --- CUSTOM CURSOR --- */
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  border: 1.5px solid var(--color-orange);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: var(--z-cursor);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 106, 26, 0.08);
+  box-shadow: 0 0 16px var(--color-orange-dim);
+}
+
+.cursorLabel {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-orange);
+}
+
+/* --- RESPONSIVE BREAKPOINTS --- */
+@media (max-width: 1024px) {
+  .layout {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 3rem;
+  }
+  .stage {
+    height: 480px;
+  }
+  .panel {
+    width: 100%;
+  }
+}
+
+@media (max-width: 749px) {
+  .showcase {
+    padding: 60px 0 80px;
+  }
+  .stage {
+    height: 420px;
+  }
+  .ringBody {
+    width: 240px;
+    height: 380px;
+  }
+  .stageControls {
+    flex-direction: column-reverse;
+    gap: 1rem;
+    align-items: center;
+  }
+  .ticks {
+    width: 100%;
+    justify-content: center;
+  }
+  .tick {
+    flex: 0 0 32px;
+  }
+  .tickActive {
+    flex-basis: 72px;
+  }
+  .panel {
+    padding: 1.5rem;
+  }
+  .popup {
+    width: 95vw;
+    max-height: 92vh;
+  }
+}
