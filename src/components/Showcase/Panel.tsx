@@ -112,10 +112,11 @@ export default function Panel({ project, visible, highlightedSpec }: PanelProps)
                           {openPicker === spec.label && (
                             <motion.div
                               className={styles.pickerDropdown}
-                              initial={{ height: 0, opacity: 0 }}
-                              animate={{ height: 'auto', opacity: 1 }}
-                              exit={{ height: 0, opacity: 0 }}
-                              transition={{ duration: 0.22, ease: SHEET }}
+                              initial={{ opacity: 0, scaleY: 0.85 }}
+                              animate={{ opacity: 1, scaleY: 1 }}
+                              exit={{ opacity: 0, scaleY: 0.85 }}
+                              style={{ originY: 0 }}
+                              transition={{ duration: 0.18, ease: SHEET }}
                             >
                               {spec.picker.options.map(opt => (
                                 <button

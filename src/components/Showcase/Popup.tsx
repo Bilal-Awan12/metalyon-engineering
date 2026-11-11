@@ -78,9 +78,9 @@ export default function Popup({ project, onClose }: PopupProps) {
             role="dialog"
             aria-modal="true"
             aria-label={`Project details: ${project.name}`}
-            initial={reduced ? { opacity: 0 } : { opacity: 0, scale: 0.94, y: 24 }}
-            animate={reduced ? { opacity: 1 } : { opacity: 1, scale: 1, y: 0 }}
-            exit={reduced ? { opacity: 0 } : { opacity: 0, scale: 0.97, y: 12 }}
+            initial={reduced ? { opacity: 0, x: '-50%', y: '-50%' } : { opacity: 0, scale: 0.94, x: '-50%', y: 'calc(-50% + 24px)' }}
+            animate={reduced ? { opacity: 1, x: '-50%', y: '-50%' } : { opacity: 1, scale: 1, x: '-50%', y: '-50%' }}
+            exit={reduced ? { opacity: 0, x: '-50%', y: '-50%' } : { opacity: 0, scale: 0.97, x: '-50%', y: 'calc(-50% + 12px)' }}
             transition={{ duration: 0.4, ease: EASE }}
           >
             {/* Top bar */}
