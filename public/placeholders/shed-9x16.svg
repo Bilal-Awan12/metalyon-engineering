@@ -1,0 +1,6 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 405 720" width="405" height="720">
+  <rect width="405" height="720" fill="#0f1113"/>
+  <polygon points="202,120 30,300 375,300" fill="#2a3038"/><rect x="50" y="300" width="305" height="300" fill="#2a3038"/><rect x="70" y="318" width="265" height="282" fill="#1a1f24"/><rect x="150" y="470" width="105" height="130" fill="#2a3038"/>
+  <line x1="0" y1="718" x2="405" y2="718" stroke="#ff6a1a" stroke-width="2"/>
+  <text x="395" y="710" font-family="sans-serif" font-size="11" fill="#ff6a1a" text-anchor="end">Concept image</text>
+</svg>
