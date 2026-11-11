@@ -1,0 +1,149 @@
+.footer {
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  padding: 80px 0 0;
+  color: var(--color-text);
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1.2fr 1.8fr;
+  gap: 3.5rem;
+  padding-bottom: 60px;
+}
+
+.logoWrap {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.25rem;
+}
+
+.logoMain {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+  line-height: 1.1;
+}
+
+.logoSub {
+  font-size: 0.65rem;
+  letter-spacing: 0.16em;
+  color: var(--color-orange);
+  font-weight: 600;
+}
+
+.blurb {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  max-width: 320px;
+  margin-bottom: 1rem;
+}
+
+.ownersLine {
+  font-size: 0.85rem;
+  color: var(--color-text);
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.estLine {
+  font-size: 0.8rem;
+  color: var(--color-orange);
+}
+
+.colTitle {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-text);
+  margin-bottom: 1.25rem;
+}
+
+.linksList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footerLink {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+  display: inline-block;
+}
+
+.footerLink:hover {
+  color: var(--color-orange);
+  transform: translateX(3px);
+}
+
+.contactCol {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.contactItem {
+  font-size: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.contactLabel {
+  font-size: 0.75rem;
+  color: var(--color-text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.contactValue,
+.contactLink {
+  color: var(--color-text-muted);
+  text-decoration: none;
+}
+
+.contactLink:hover {
+  color: var(--color-orange);
+}
+
+.bottomBar {
+  border-top: 1px solid var(--color-border);
+  padding: 1.5rem 0;
+  background: var(--color-bg);
+}
+
+.bottomInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.copyright,
+.rights {
+  font-size: 0.8rem;
+  color: var(--color-text-dim);
+}
+
+@media (max-width: 1024px) {
+  .inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .inner {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}

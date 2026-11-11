@@ -1,0 +1,287 @@
+.hero {
+  position: relative;
+  min-height: calc(100vh - var(--header-h));
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: var(--color-bg);
+  overflow: hidden;
+}
+
+.bgLayer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.laserBeam {
+  position: absolute;
+  top: 38%;
+  width: 180px;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 106, 26, 0.9) 50%,
+    transparent 100%
+  );
+  box-shadow: 0 0 12px var(--color-orange-glow);
+}
+
+.laserBeam2 {
+  position: absolute;
+  top: 62%;
+  width: 240px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 106, 26, 0.5) 50%,
+    transparent 100%
+  );
+}
+
+.spark {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--color-orange);
+  box-shadow: 0 0 8px var(--color-orange);
+}
+
+.heroInner {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  flex: 1;
+}
+
+.content {
+  max-width: 680px;
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 2rem;
+}
+
+.eyebrowLine {
+  width: 36px;
+  height: 2px;
+  background: var(--color-orange);
+}
+
+.eyebrowText {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.headline {
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 7.5vw, 6.75rem);
+  font-weight: 700;
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+  color: var(--color-text);
+}
+
+.since {
+  color: var(--color-orange);
+  display: block;
+}
+
+.sub {
+  font-size: 1.15rem;
+  color: var(--color-text-muted);
+  line-height: 1.65;
+  margin-top: 2rem;
+  max-width: 540px;
+}
+
+.ctas {
+  display: flex;
+  gap: 1.25rem;
+  margin-top: 2.75rem;
+  flex-wrap: wrap;
+}
+
+.ctaPrimary {
+  background: var(--color-orange);
+  color: #000;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 16px 36px;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  transition: all 0.2s ease;
+}
+
+.ctaPrimary:hover {
+  background: #ff7d38;
+  box-shadow: 0 0 24px var(--color-orange-glow);
+}
+
+.ctaSecondary {
+  border: 1px solid var(--color-border-strong);
+  color: var(--color-text);
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 16px 32px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.ctaSecondary:hover {
+  border-color: var(--color-orange);
+  color: var(--color-orange);
+}
+
+/* Concept Photo Placeholder Frame */
+.heroSlot {
+  width: 420px;
+  max-width: 100%;
+  flex-shrink: 0;
+}
+
+.placeholderFrame {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+}
+
+.placeholderCrosshairs {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 106, 26, 0.08) 0%,
+    transparent 65%
+  );
+  pointer-events: none;
+}
+
+.placeholderContent {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.placeholderTag {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--color-orange);
+  letter-spacing: 0.12em;
+}
+
+.placeholderTitle {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.placeholderHelp {
+  font-size: 0.75rem;
+  color: var(--color-text-dim);
+  max-width: 220px;
+}
+
+/* Industrial framing corners */
+.cornerTL, .cornerTR, .cornerBL, .cornerBR {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border: 2px solid var(--color-orange);
+}
+.cornerTL { top: -1px; left: -1px; border-right: none; border-bottom: none; }
+.cornerTR { top: -1px; right: -1px; border-left: none; border-bottom: none; }
+.cornerBL { bottom: -1px; left: -1px; border-right: none; border-top: none; }
+.cornerBR { bottom: -1px; right: -1px; border-left: none; border-top: none; }
+
+/* Trust bar */
+.trustBar {
+  position: relative;
+  z-index: 10;
+  border-top: 1px solid var(--color-border);
+  background: var(--color-surface);
+  padding: 1.25rem 0;
+}
+
+.trustInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.trustItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.trustSep {
+  color: var(--color-orange);
+  font-size: 1.25rem;
+}
+
+.trustText {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--color-text);
+}
+
+@media (max-width: 1024px) {
+  .heroInner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 3.5rem;
+  }
+  .heroSlot {
+    width: 100%;
+    max-width: 360px;
+  }
+}
+
+@media (max-width: 640px) {
+  .heroInner {
+    padding-top: 2.5rem;
+    padding-bottom: 3rem;
+  }
+  .heroSlot {
+    display: none;
+  }
+  .trustInner {
+    justify-content: flex-start;
+    gap: 0.75rem;
+  }
+}

@@ -1,0 +1,387 @@
+.page {
+  padding-bottom: 120px;
+  background: var(--color-bg);
+  min-height: calc(100vh - var(--header-h));
+}
+
+.header {
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  padding: 4.5rem 0 3.5rem;
+  margin-bottom: 4rem;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  color: var(--color-text);
+  letter-spacing: -0.03em;
+}
+
+.sub {
+  font-size: 1.1rem;
+  color: var(--color-text-muted);
+  max-width: 680px;
+  margin-top: 0.75rem;
+  line-height: 1.6;
+}
+
+.storySection {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 4.5rem;
+  align-items: center;
+  margin-bottom: 6rem;
+}
+
+.sectionTag {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-orange);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.sectionHeading {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.sectionSub {
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  margin-top: 0.5rem;
+}
+
+.storyText {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  font-size: 1.05rem;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+
+.factsList {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.factItem {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.factNum {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-orange);
+}
+
+.factLabel {
+  font-size: 0.8rem;
+  color: var(--color-text-dim);
+}
+
+.storyPhotoSlot {
+  aspect-ratio: 4 / 5;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.photoFrame {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.photoTag {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--color-orange);
+  letter-spacing: 0.1em;
+}
+
+.photoTitle {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.photoDesc {
+  font-size: 0.8rem;
+  color: var(--color-text-dim);
+}
+
+/* Capabilities */
+.capabilitiesSection {
+  margin-bottom: 6rem;
+  padding-top: 4rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.capHead {
+  margin-bottom: 3rem;
+}
+
+.capabilitiesGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--color-border);
+  border: 1px solid var(--color-border);
+}
+
+.capCard {
+  background: var(--color-surface);
+  padding: 2.25rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.capNum {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--color-orange);
+  font-weight: 700;
+}
+
+.capTitle {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.capSpecs {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+/* Timeline */
+.timelineSection {
+  margin-bottom: 6rem;
+  padding-top: 4rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.timelineList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.timelineItem {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 2.5rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  padding: 2rem;
+  align-items: center;
+}
+
+.timelineYearWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.timelineYear {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-orange);
+}
+
+.fixedBadge {
+  background: var(--color-orange-dim);
+  color: var(--color-orange);
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  padding: 2px 6px;
+  width: fit-content;
+  text-transform: uppercase;
+}
+
+.timelineContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.timelineTitle {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.timelineDesc {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+/* Leadership */
+.leadershipSection {
+  margin-bottom: 6rem;
+  padding-top: 4rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.ownersGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.ownerCard {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.ownerAvatar {
+  width: 56px;
+  height: 56px;
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-orange);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.75rem;
+}
+
+.ownerInitials {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-orange);
+}
+
+.ownerRole {
+  font-size: 0.75rem;
+  color: var(--color-orange);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.ownerName {
+  font-family: var(--font-display);
+  font-size: 1.65rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.ownerBio {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin-top: 0.5rem;
+}
+
+/* Bottom CTA */
+.bottomCta {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  padding: 4rem 3rem;
+  text-align: center;
+}
+
+.bottomTitle {
+  font-family: var(--font-display);
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.bottomSub {
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  margin-top: 0.75rem;
+  max-width: 560px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.bottomActions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.bottomPrimary {
+  background: var(--color-orange);
+  color: #000;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 14px 32px;
+  text-decoration: none;
+}
+
+.bottomSecondary {
+  border: 1px solid var(--color-border-strong);
+  color: var(--color-text);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 14px 32px;
+  text-decoration: none;
+}
+
+@media (max-width: 1024px) {
+  .storySection {
+    grid-template-columns: 1fr;
+  }
+  .capabilitiesGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .capabilitiesGrid {
+    grid-template-columns: 1fr;
+  }
+  .timelineItem {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .ownersGrid {
+    grid-template-columns: 1fr;
+  }
+  .factsList {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}

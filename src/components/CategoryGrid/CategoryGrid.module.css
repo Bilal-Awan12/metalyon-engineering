@@ -1,0 +1,146 @@
+.section {
+  padding: 100px 0;
+  background: var(--color-bg);
+  border-top: 1px solid var(--color-border);
+}
+
+.header {
+  margin-bottom: 3.5rem;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 5vw, 3.5rem);
+  font-weight: 700;
+  color: var(--color-text);
+  letter-spacing: -0.02em;
+}
+
+.sub {
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  max-width: 580px;
+  margin-top: 0.75rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--color-border);
+  border: 1px solid var(--color-border);
+}
+
+.card {
+  background: var(--color-bg);
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  transition: background-color 0.25s ease;
+  position: relative;
+}
+
+.card:hover {
+  background: var(--color-surface);
+}
+
+.cardHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.cardNum {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--color-orange);
+  font-weight: 700;
+}
+
+.cardTitle {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 1.2;
+}
+
+.cardDesc {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+.productsListWrap {
+  margin-top: auto;
+  border-top: 1px solid var(--color-border);
+  padding-top: 1.25rem;
+}
+
+.productsHead {
+  font-size: 0.75rem;
+  color: var(--color-text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.productsList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.productItem {
+  font-size: 0.85rem;
+}
+
+.productLink {
+  color: var(--color-text-muted);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.productLink:hover {
+  color: var(--color-orange);
+}
+
+.viewLink {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-border);
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-orange);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.arrow {
+  transition: transform 0.2s ease;
+}
+
+.viewLink:hover .arrow {
+  transform: translateX(4px);
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .card {
+    padding: 2rem 1.5rem;
+  }
+}

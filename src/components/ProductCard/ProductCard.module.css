@@ -1,0 +1,151 @@
+.card {
+  background: var(--color-bg);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.2s ease;
+}
+
+.card:hover {
+  background: var(--color-surface);
+}
+
+.imgLink {
+  display: block;
+  text-decoration: none;
+}
+
+.imgWrap {
+  aspect-ratio: 4 / 5;
+  background: var(--color-surface-2);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.35s ease;
+}
+
+.card:hover .img {
+  transform: scale(1.05);
+}
+
+.laserHover {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 65%,
+    rgba(255, 106, 26, 0.12) 100%
+  );
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.card:hover .laserHover {
+  opacity: 1;
+}
+
+.body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 0.5rem;
+}
+
+.category {
+  font-size: 0.7rem;
+  color: var(--color-orange);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+}
+
+.name {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.nameLink {
+  color: var(--color-text);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.nameLink:hover {
+  color: var(--color-orange);
+}
+
+.desc {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.priceRow {
+  margin-top: auto;
+  padding-top: 0.75rem;
+}
+
+.price {
+  font-size: 0.8rem;
+  color: var(--color-text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 0.75rem;
+}
+
+.viewBtn {
+  flex: 1;
+  border: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 8px 12px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.viewBtn:hover {
+  border-color: var(--color-orange);
+  color: var(--color-orange);
+}
+
+.addBtn {
+  background: var(--color-orange);
+  color: #000;
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 8px 14px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  white-space: nowrap;
+}
+
+.addBtn:hover {
+  background: #ff7d38;
+}
