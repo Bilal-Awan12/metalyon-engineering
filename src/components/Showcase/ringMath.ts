@@ -78,3 +78,4 @@ export function projectIndex(i: number): number {
 export function isBodyAtFront(angle: number): boolean {
   return Math.abs(normalizeAngle(angle)) < Math.PI / N_BODIES
 }
+

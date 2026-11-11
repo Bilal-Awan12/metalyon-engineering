@@ -69,3 +69,4 @@ export default function ProductCard({ product }: { product: Product }) {
     </motion.article>
   )
 }
+

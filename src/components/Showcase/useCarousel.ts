@@ -110,3 +110,4 @@ export function useCarousel(autoplayEnabled: boolean = true): CarouselControls {
     disengageAutoplay,
   }
 }
+

@@ -9,3 +9,4 @@ export function assetUrl(path: string): string {
     : `${import.meta.env.BASE_URL}/`
   return `${base}${cleanPath}`
 }
+

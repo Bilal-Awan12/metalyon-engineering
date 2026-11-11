@@ -31,3 +31,8 @@ dist-ssr
 # Temporary agent logs & scratch
 .agents/
 .gemini/
+
+
+skills-lock.json
+screenshot-*.png
+test-e2e.cjs

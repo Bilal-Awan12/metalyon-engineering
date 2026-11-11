@@ -42,3 +42,4 @@ export default function Ticks({ activeIdx, onTick, autoplayKey }: TicksProps) {
     </div>
   )
 }
+
