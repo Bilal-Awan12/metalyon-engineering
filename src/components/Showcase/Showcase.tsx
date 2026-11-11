@@ -235,7 +235,6 @@ export default function Showcase() {
           setPopupProject(null)
           resumeAutoplay()
         }}
-        onHighlightSpec={label => setHighlightedSpec(label)}
       />
     </section>
   )
